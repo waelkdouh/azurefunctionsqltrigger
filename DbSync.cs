@@ -2,6 +2,10 @@ using System.Collections.Generic;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using Microsoft.Azure.WebJobs.Extensions.Sql;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace AzureSQL.ToDo
 {
@@ -23,5 +27,20 @@ namespace AzureSQL.ToDo
 
             }
         }
+
+
+        //[FunctionName("GetToDoItem")]
+        //public static IActionResult Run(
+        //   [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "gettodoitem")]
+        //    HttpRequest req,
+        //   [Sql("select [Id], [order], [title], [url], [completed] from dbo.ToDo where Id = @Id",
+        //        CommandType = System.Data.CommandType.Text,
+        //        Parameters = "@Id={Query.id}",
+        //        ConnectionStringSetting = "SqlConnectionString")]
+        //    IEnumerable<ToDoItem> toDoItem, ILogger logger)
+        //{
+        //    logger.LogInformation($"function called ");
+        //    return new OkObjectResult(toDoItem.FirstOrDefault());
+        //}
     }
 }
