@@ -7,8 +7,10 @@ INSERT into [dbo].[ToDo] values (newid() , 1,'buy cat food','https://www.bing.co
   
 UPDATE [dbo].[ToDo] set [completed]= 1 where id= 'a30d7526-4827-4d07-8cce-130b37f03953'
 
+
 CREATE USER cchfuncapp FROM EXTERNAL PROVIDER;
 ALTER ROLE db_datareader ADD MEMBER cchfuncapp;
 ALTER ROLE db_datawriter ADD MEMBER cchfuncapp
+ALTER ROLE db_owner ADD MEMBER cchfuncapp
 GO
 
