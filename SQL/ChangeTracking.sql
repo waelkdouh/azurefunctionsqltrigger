@@ -11,6 +11,6 @@ UPDATE [dbo].[ToDo] set [completed]= 1 where id= 'a30d7526-4827-4d07-8cce-130b37
 CREATE USER cchfuncapp FROM EXTERNAL PROVIDER;
 ALTER ROLE db_datareader ADD MEMBER cchfuncapp;
 ALTER ROLE db_datawriter ADD MEMBER cchfuncapp
-ALTER ROLE db_owner ADD MEMBER cchfuncapp
+GRANT VIEW CHANGE TRACKING ON [dbo].[ToDo] TO cchfuncapp
 GO
 
